@@ -1,0 +1,109 @@
+\documentclass[10pt,xcolor={table,dvipsnames},t,unknownkeysallowed]{beamer}
+\usetheme{CLT}
+
+\title{Presentation Title}
+\subtitle{Subtitle}
+\author{Author}
+\institute{Department | Institution}
+\date{Presentation Date}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+This template is designed with the official \href{https://brand.charlotte.edu/visual-identity/logo-system}{logo} and \href{https://brand.charlotte.edu/visual-identity/color-palette}{color palette} of the University of North Carolina at Charlotte.
+\newline
+\newline
+It is a modified version of the UC Berkeley Beamer Theme, which can be found \href{https://www.overleaf.com/latex/templates/uc-berkeley-beamer-theme/bywswngntrws}{here}. 
+\end{frame}
+
+\section {Basic Features}
+
+\begin{frame}{Some Features}
+\begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+        Multiple columns can be utilized as needed.
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+Important words can be \alert{highlighted}, \textbf{bolded}, \emph{italicized}, or \alert{\emph{\textbf{any combination of the three}}} within the text. 
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Some Features, Cont.}
+Blocks are useful for bringing attention to important definitions, theorems, or other main points:
+\newline
+    \begin{block}{Making Lists}
+        \begin{enumerate}
+            \item Use \texttt{enumerate} for numbered lists.
+        \end{enumerate}
+        \begin{itemize}
+            \item Use \texttt{itemize} for bullet points
+            \item[!] See other options for lists \href{https://www.overleaf.com/learn/latex/Lists}{here}.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Some Features, Cont.}
+  Use \texttt{alert<+- | alert@+>} to add to a single slide, highlighting each addition as you go:
+  \begin{itemize}[<+- | alert@+>]
+    \item[]
+    \item This is the first important point.
+    \item This is the second important point.
+    \item This is the final important point.
+   \end{itemize}
+    
+\end{frame}
+
+\section{Mathematical Notation}
+
+\begin{frame}{Mathematical Notation}
+\begin{itemize}
+    \item Equations can appear in line with the text, \(x^2 + y^2 = z^2\).
+    \item Or with display math mode, equations can also be set apart: \[f(x) = \frac{1}{\sigma\sqrt{2\pi}} 
+  \exp\left( -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{\!2}\,\right)\]
+\end{itemize}
+
+\end{frame}
+
+\section{Tables and Figures}
+
+\begin{frame}{A Sample Table}
+
+This is how a basic table will appear in this template using \texttt{tabular}:
+\newline
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+\tableheadrow
+& Item1 & Item2 & Item3 \\
+\hline
+Row1 & 1 & 2 & 3 \\
+Row2 & 4 & 5 & 6 \\
+Row3 & 7 & 8 & 9 \\
+\hline
+\end{tabular}
+\medskip
+\caption{\label{tab:sample}A sample table.}
+\end{center}
+\end{table}
+
+\end{frame}
+
+\begin{frame}{A Sample Figure}
+To insert figures, upload the image to the file tree and use \texttt{includegraphics}:
+\newline
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{tuition}
+\caption{\label{fig:figure}A sample figure (original source \href{https://management.charlotte.edu/admissions/financial-information}{here}).}
+\end{figure}
+\end{frame}
+
+\end{document}
