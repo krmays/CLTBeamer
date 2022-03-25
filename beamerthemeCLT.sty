@@ -1,0 +1,102 @@
+% beamerthemeCLT.sty v1.0 (March 15, 2022)
+\ProvidesPackage{beamerthemeCLT}
+
+\RequirePackage{silence}
+\WarningsOff[mathdesign/mdbch]
+
+\RequirePackage{etoolbox}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\RequirePackage{multicol}
+\RequirePackage{fontspec}
+\setromanfont[Ligatures={TeX,Common}]{Georgia}
+
+\IfFileExists{fonts/OpenSans-Regular.ttf}
+{\setsansfont[Ligatures={TeX,Common},
+  Scale=0.90,
+  Path=fonts/,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic,
+  BoldItalicFont=*-BoldItalic
+  ]{OpenSans}}
+{\setsansfont[Ligatures={TeX,Common}]{Verdana}}
+
+\RequirePackage{tikz}
+
+\definecolor{CLTGreen}{RGB}{0, 80, 53}
+\definecolor{NinerGold}{RGB}{185,151,91}
+\definecolor{TableGray}{RGB}{240, 240, 240}
+%The following colors are the University's official secondary colors and can be used for alerts, accents, etc.
+\definecolor{PineGreen}{RGB}{137, 144, 100}
+\definecolor{ClayRed}{RGB}{128, 47, 45}
+\definecolor{SkyBlue}{RGB}{0, 115, 119}
+\definecolor{OreBlack}{RGB}{16, 24, 32}
+\definecolor{Jasper}{RGB}{241, 230, 178}
+
+\setbeamertemplate{title page}[default][center]
+\setbeamerfont{title}{family=\rmfamily,size=\Huge}
+\setbeamerfont{author}{size=\Large}
+
+\setbeamersize{text margin left=2em, text margin right=2em}
+
+\setbeamertemplate{frametitle}{\vskip0.2\paperheight\insertframetitle} 
+\setbeamerfont{frametitle}{family=\rmfamily,series=\mdseries,size=\LARGE}
+\setbeamerfont{block title}{family=\rmfamily,size=\large}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Basic theme colors (titles, alerts, blocks, etc.) can be changed here:
+\setbeamercolor{titlelike}{fg=NinerGold}
+\setbeamercolor{subtitle}{fg=CLTGreen}
+\setbeamercolor{normal text}{fg=OreBlack}
+\setbeamercolor{structure}{fg=OreBlack}
+\setbeamercolor{block title}{bg=CLTGreen!90, fg=white}
+\setbeamercolor{block body}{bg=PineGreen!25}
+\setbeamercolor{alerted text}{fg=CLTGreen!80}
+
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{--}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+\setlength{\leftmargini}{1.25em}
+\setlength{\leftmarginii}{1em}
+\setlength{\leftmarginiii}{1em}
+
+\RequirePackage{hyperref}
+% Link colors can be changed here:
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor={SkyBlue},
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\pgfdeclareimage[width=\paperwidth]{CLT}{CLT}
+\pgfdeclareimage[width=0.3\paperwidth]{logo}{CLTlogo}
+
+\setbeamertemplate{background}{%
+\begin{tikzpicture}[overlay,remember picture]
+\node[anchor=south west,inner sep=0pt,draw=none,yshift=-4pt] at (current page.south west) {\pgfuseimage{CLT}};%
+\node[anchor=south west,inner sep=0pt,draw=none,xshift=0.05\paperwidth,yshift=0.04\paperheight] at (current page.south west) {\pgfuseimage{logo}};%
+\end{tikzpicture}%
+}
+
+\setbeamertemplate{footline}{%
+\vskip0.15\paperheight
+}
+
+\newcommand{\smallframetitle}{%
+  \setbeamertemplate{frametitle}{\vskip0.15\paperheight\insertframetitle}
+  \setbeamerfont{frametitle}{size=\large,series=\bfseries}
+}
+\newcommand{\normalframetitle}{%
+  \setbeamertemplate{frametitle}{\vskip0.2\paperheight\insertframetitle} 
+  \setbeamerfont{frametitle}{size=\LARGE,series=\mdseries}
+}
+
+\renewcommand{\arraystretch}{1.2}
+\newcommand{\tableheadrow}{\rowcolor{NinerGold!70}}
+\rowcolors{2}{TableGray}{PineGreen!25}
+\AtBeginEnvironment{tabular}{\color{black}}
